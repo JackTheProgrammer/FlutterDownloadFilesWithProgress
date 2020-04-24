@@ -34,8 +34,8 @@ class MyAppState extends State<MyApp> {
     try {
       var dir = await getApplicationDocumentsDirectory();
 
-      await dio.download(imgUrl, "${dir.path}/myimage.jpg",
-          onProgress: (rec, total) {
+      await dio.download(imgUrl, "${dir}/myimage.jpg",
+        onReceivedProgress: (rec, total) {
         print("Rec: $rec , Total: $total");
 
         setState(() {
